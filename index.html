@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verity Advocacy LLC | Healthcare Navigation, Billing Advocacy &amp; Consulting</title>
+  <meta name="description" content="Verity Advocacy LLC provides independent healthcare navigation, medical billing dispute resolution, insurance appeals, and public-sector healthcare consulting." />
+  <style>
+    :root {
+      --navy: #0f2942;
+      --navy-light: #183b5c;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --slate: #334155;
+      --muted: #64748b;
+      --bg-soft: #f8fafc;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--slate);
+      line-height: 1.6;
+      background-color: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--slate);
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.35rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--teal-dark);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      padding: 5.5rem 0 5rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.22);
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      color: #99f6e4;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.16;
+      font-weight: 800;
+      max-width: 780px;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      max-width: 660px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+
+    .trust-strip strong {
+      display: block;
+      color: #5eead4;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 4.75rem 0;
+    }
+
+    .section-soft {
+      background-color: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    .section-eyebrow {
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      color: var(--navy);
+      line-height: 1.22;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* Cards Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.85rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(15, 41, 66, 0.08);
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.18rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--slate);
+    }
+
+    .card li {
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.45rem;
+    }
+
+    .card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* Gov Contracting Table / Box */
+    .gov-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .gov-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .gov-item {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    .gov-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .gov-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .gov-value-sans {
+      font-family: inherit;
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 2.25rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card p {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      font-size: 0.96rem;
+    }
+
+    .contact-detail {
+      margin-bottom: 1.15rem;
+    }
+
+    .contact-detail span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #5eead4;
+      font-weight: 700;
+    }
+
+    .contact-detail a,
+    .contact-detail div {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.96rem;
+      color: var(--slate);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid rgba(13, 148, 136, 0.25);
+      border-color: var(--teal);
+    }
+
+    footer {
+      background: #091a2b;
+      color: #94a3b8;
+      padding: 2.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      nav ul {
+        display: none;
+      }
+      .hero {
+        padding: 4rem 0 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <span class="brand-mark">V</span>
+        <span>Verity Advocacy LLC</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#public-sector">Government &amp; Public Sector</a></li>
+          <li><a href="#about">Approach</a></li>
+          <li><a href="#contact" class="btn btn-primary">Request Consultation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="hero-badge">Independent Patient Advocacy &amp; Healthcare Consulting</span>
+        <h1>Clarity, Accountability, and Precision in Healthcare Navigation.</h1>
+        <p>
+          Verity Advocacy LLC partners with individuals, employers, community organizations, and public agencies to resolve complex medical billing disputes, overturn improper insurance denials, and strengthen healthcare program operations.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+          <a href="#public-sector" class="btn btn-outline">Procurement &amp; Capabilities</a>
+        </div>
+        <div class="trust-strip">
+          <div>
+            <strong>SAM.gov Registered</strong>
+            <span>UEI: SAXTBJXEYRV7 &bull; CAGE: 23DV0</span>
+          </div>
+          <div>
+            <strong>Business Classification</strong>
+            <span>100% Woman-Owned &amp; Minority-Owned Small Business</span>
+          </div>
+          <div>
+            <strong>State &amp; Municipal Vendor</strong>
+            <span>MissouriBUYS &amp; City of Saint Louis Registered</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Core Practice Areas</div>
+          <h2>Specialized Advocacy &amp; Health Operations Support</h2>
+          <p>
+            Grounded in hands-on experience across hospital patient financial services, pre-certification, health benefits administration, and regulatory compliance.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Medical Billing Dispute Resolution</h3>
+            <p>
+              Line-by-line forensic auditing of hospital, physician, and facility statements to identify coding errors, duplicate charges, and balance-billing violations.
+            </p>
+            <ul>
+              <li>Itemized bill &amp; CPT/ICD-10 audit</li>
+              <li>No Surprises Act &amp; EOB reconciliation</li>
+              <li>Financial assistance &amp; settlement negotiation</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Insurance Denials &amp; Appeals</h3>
+            <p>
+              Structured administrative and clinical-documentation appeals for prior authorization denials, out-of-network claims, and medical necessity determinations.
+            </p>
+            <ul>
+              <li>Internal &amp; external review appeal packets</li>
+              <li>Pre-certification &amp; utilization review support</li>
+              <li>Employer &amp; Taft-Hartley plan navigation</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Healthcare Program &amp; Benefits Consulting</h3>
+            <p>
+              Advisory and operational support for public agencies, community care hubs, and employers seeking measurable accountability across health and pharmacy benefits.
+            </p>
+            <ul>
+              <li>PBM &amp; health plan claim audit readiness</li>
+              <li>Care coordination &amp; community hub workflows</li>
+              <li>Benefits compliance &amp; member advocacy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="public-sector" class="section-soft">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Government &amp; Institutional Contracting</div>
+          <h2>Vendor Credentials &amp; Readiness</h2>
+          <p>
+            Verity Advocacy LLC maintains active federal, state, and local procurement registrations to support prime contracts, subawards, and technical assistance engagements.
+          </p>
+        </div>
+
+        <div class="gov-box">
+          <div class="gov-grid">
+            <div class="gov-item">
+              <div class="gov-label">Legal Entity</div>
+              <div class="gov-value gov-value-sans">Verity Advocacy LLC</div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-label">SAM.gov Unique Entity ID</div>
+              <div class="gov-value">SAXTBJXEYRV7</div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-label">CAGE Code</div>
+              <div class="gov-value">23DV0</div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-label">Socioeconomic Status</div>
+              <div class="gov-value gov-value-sans">Woman-Owned &amp; Minority-Owned</div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-label">State &amp; Local Portals</div>
+              <div class="gov-value gov-value-sans">MissouriBUYS &bull; City of St. Louis</div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-label">Headquarters</div>
+              <div class="gov-value gov-value-sans">St. Louis County, Missouri</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Why Verity Advocacy</div>
+          <h2>Built on Revenue-Cycle &amp; Benefits Expertise</h2>
+          <p>
+            Healthcare systems and payers rely on complex billing rules and administrative bottlenecks. Verity Advocacy brings insider operational knowledge to the side of patients, plan sponsors, and public programs—ensuring every claim, appeal, and contract deliverable stands up to scrutiny.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-soft">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h3>Connect With Verity Advocacy</h3>
+            <p>
+              Reach out directly to discuss an individual medical billing or insurance appeal matter, a subaward partnership, or a healthcare consulting engagement.
+            </p>
+            <div class="contact-detail">
+              <span>Business Line</span>
+              <a href="tel:+13142251621">(314) 225-1621</a>
+            </div>
+            <div class="contact-detail">
+              <span>Email</span>
+              <a href="mailto:info@verityadvocacy.com">info@verityadvocacy.com</a>
+            </div>
+            <div class="contact-detail">
+              <span>Service Area</span>
+              <div>St. Louis Metro &bull; Missouri &bull; Nationwide Remote</div>
+            </div>
+          </div>
+
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="form-group">
+              <label for="name">Full Name or Organization</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe / Agency Name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="name@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="inquiry">Inquiry Type</label>
+              <select id="inquiry" name="inquiry">
+                <option value="billing">Medical Billing Audit / Dispute</option>
+                <option value="appeal">Insurance Denial / Prior Auth Appeal</option>
+                <option value="gov">Government Contracting / Subaward / RFP</option>
+                <option value="consulting">Employer / Benefits Consulting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">How Can We Help?</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Briefly describe your situation or project timeline..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>&copy; 2026 Verity Advocacy LLC. All rights reserved.</div>
+      <div>UEI: SAXTBJXEYRV7 &bull; CAGE: 23DV0 &bull; info@verityadvocacy.com</div>
+    </div>
+  </footer>
+
+</body>
+</html>
